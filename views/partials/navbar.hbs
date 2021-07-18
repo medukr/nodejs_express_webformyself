@@ -2,15 +2,15 @@
     <div class="nav-wrapper">
         <a href="#" class="brand-logo">Приложение курсов</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>
-                <a href="/">Главная</a>
-            </li>
-            <li>
-                <a href="/courses">Курсы</a>
-            </li>
-            <li>
-                <a href="/add">Добавить курс</a>
-            </li>
+            {{#if isHome}}
+                <li class="active"><a href="/">Главная</a></li>
+            {{else}}
+                <li class=""><a href="/">Главная</a></li>
+            {{/if}}
+
+
+            <li class="{{#if isCourses}}active{{/if}}"><a href="/courses">Курсы</a></li>
+            <li class="{{#if isAdd}}active{{/if}}"><a href="/add">Добавить курс</a></li>
         </ul>
     </div>
 </nav>
