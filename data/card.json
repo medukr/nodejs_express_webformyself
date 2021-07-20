@@ -1,0 +1,12 @@
+{
+  "courses": [
+    {
+      "title": "Angular 8",
+      "price": "14000",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png",
+      "id": "e41df1f4-e9b5-48c3-b00e-a0dcef7206ae",
+      "count": 1
+    }
+  ],
+  "price": 14000
+}
