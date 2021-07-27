@@ -10,8 +10,9 @@ const p = path.join(
 class Card {
     static async add(course) {
         const card = await Card.fetch()
-
-        const idx = card.courses.findIndex((c) => {c.id === course.id})
+        const idx = card.courses.findIndex(c => {
+            return c.id === course.id
+        })
         const candidate = card.courses[idx]
 
         if (candidate) {
