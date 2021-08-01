@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const mongoose = require('mongoose')
 const exphbs = require('express-handlebars')
 const homeRoutes = require('./routes/home')
 const cardRoutes = require('./routes/card')
@@ -26,6 +27,17 @@ app.use('/card', cardRoutes)
 
 const PORT = process.env.PORT || 3000
 
-app.listen(PORT, ()=> {
-    console.log('--->',`Server is running on http://localhost:${PORT}`);
-})
+async function start() {
+    try {
+        const url = `mongodb+srv://andrii:ul0rHs9F7Q3ezi5l@cluster0.q78fk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+        await mongoose.connect(url, { useNewUrlParser:true, useUnifiedTopology: true })
+
+        app.listen(PORT, ()=> {
+            console.log('--->',`Server is running on http://localhost:${PORT}`);
+        })
+    } catch (e) {
+        console.log('--->e', e);
+    }
+}
+
+start();
