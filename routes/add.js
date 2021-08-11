@@ -16,6 +16,7 @@ router.post('/', async (req, res) => {
         title: req.body.title,
         price: req.body.price,
         img: req.body.img,
+        userId: req.user // req.user - в mangoose из коробки отработает как req.user._id изза описанных связей
     })
 
     try {
